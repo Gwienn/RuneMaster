@@ -1,0 +1,168 @@
+<configs>
+	<append xpath="/item_modifiers">
+		<item_modifier name="modGeneralRune" type="attachment">
+			<property name="CreativeMode" value="None"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+			<property name="DropScale" value="6"/>
+			<property name="Group" value="Mods,Tool/Weapon Mods"/>
+			<property name="SellableToTrader" value="false"/>
+		</item_modifier>
+
+		<item_modifier name="modGwiennRuneFeoh" installable_tags="weapon,tool,armor,vehicle" modifier_tags="gwiennRuneFeoh" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneFeoh"/>
+			<property name="DescriptionKey" value="RuneFeohDesc"/>	
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="melee"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".35"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="ranged"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffFeohRanged"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="tool"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value=".35"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armor"/>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+			</effect_group>
+			<effect_group tiered="false"> <!-- vehicle -->
+				<passive_effect name="VehicleFuelUsePer" operation="perc_add" value=".25"/>
+			</effect_group>
+		</item_modifier>
+
+		<item_modifier name="modGwiennRuneUr" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneUr" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneUr"/>
+			<property name="DescriptionKey" value="RuneUrDesc"/>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="melee"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="ranged"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="tool"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armor"/>
+			</effect_group>
+			<effect_group tiered="false"> <!-- vehicle -->
+			</effect_group>
+		</item_modifier>
+
+		<item_modifier name="modGwiennRuneThurs" installable_tags="weapon,tool" blocked_tags="noMods" modifier_tags="gwiennRuneThurs" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneThurs"/>
+			<property name="DescriptionKey" value="RuneThursDesc"/>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="melee"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="ranged"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="tool"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armor"/>
+			</effect_group>
+			<effect_group tiered="false"> <!-- vehicle -->
+			</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="modGwiennRuneAnsuz" installable_tags="weapon,tool" blocked_tags="noMods" modifier_tags="gwiennRuneAnsuz" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneAnsuz"/>
+			<property name="DescriptionKey" value="RuneAnsuzDesc"/>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="melee"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="ranged"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="tool"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armor"/>
+			</effect_group>
+			<effect_group tiered="false"> <!-- vehicle -->
+			</effect_group>
+		</item_modifier>
+
+		<item_modifier name="modGwiennRuneRad" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneRad" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneRad"/>
+			<property name="DescriptionKey" value="RuneRadDesc"/>
+			<effect_group tiered="false">
+				<requirement name="HoldingItemHasTags" tags="ranged"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".25" />
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".5" />
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" />
+			</effect_group>
+				
+			<effect_group tiered="false">
+				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
+				<requirement name="ItemHasTags" tags="armorChest"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadChestArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadChestArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
+				<requirement name="ItemHasTags" tags="armorHelmet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadHelmetArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadHelmetArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
+				<requirement name="ItemHasTags" tags="armorLegs"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadLegsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadLegsArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
+				<requirement name="ItemHasTags" tags="armorHands"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadGlovesArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadGlovesArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
+				<requirement name="ItemHasTags" tags="armorFeet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadBootsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadBootsArmor"/>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HoldingItemHasTags" tags="revolver"/>
+				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="6" />
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="500" />
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="5" />
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="!HoldingItemHasTags" tags="weapon"/> <!-- vehicleで指定できないので、消去法で指定 -->
+				<requirement name="!HoldingItemHasTags" tags="armor"/>
+				<requirement name="!HoldingItemHasTags" tags="clothing"/>
+				<requirement name="!HoldingItemHasTags" tags="tool"/>
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
+				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
+			</effect_group>
+		</item_modifier>
+
+		<item_modifier name="modGwiennRuneTyr" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneTyr" type="attachment">
+			<property name="Extends" value="modGeneralRune"/>
+			<property name="CustomIcon" value="RuneTyr"/>
+			<property name="DescriptionKey" value="RuneTyrDesc"/>
+		</item_modifier>
+	</append>
+</configs>

@@ -1,0 +1,73 @@
+<configs>
+    <append xpath="/buffs">
+        <buff name="buffFeohRanged" hidden="true">
+            <duration value="100"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+            </effect_group>
+        </buff>
+        <!-- Radルーンの防具効果。移動速度とジャンプ力上昇。効果はスタックしない。 -->
+        <buff name="buffRadChestArmor" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffRadHelmetArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffRadChestArmor"/>
+                <requirement name="!HasBuff" buff="buffRadLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffRadBootsArmor"/>
+                <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffRadLegsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffRadHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffRadChestArmor"/>
+                <requirement name="!HasBuff" buff="buffRadBootsArmor"/>
+                <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffRadBootsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffRadHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffRadChestArmor"/>
+                <requirement name="!HasBuff" buff="buffRadLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffRadGlovesArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffRadHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffRadChestArmor"/>
+                <requirement name="!HasBuff" buff="buffRadLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffRadBootsArmor"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+    </append>
+</configs>

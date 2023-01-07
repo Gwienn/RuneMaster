@@ -1,0 +1,20 @@
+Key,English
+[35bd00]Green[-]
+[f21b10]Red[-]
+[fff700]Yellow[-]
+
+Item_Modifiers_________________________________XML,Item_Modifiers_________________________________XML
+modGwiennRuneFeoh,"Fe(富)のルーン"
+modGwiennRuneUr,"Ur(鉱滓)のルーン"
+modGwiennRuneThurs,"Thurs(巨人)のルーン"
+modGwiennRuneAnsuz,"Oss(河口)のルーン"
+modGwiennRuneRad,"Rad(騎馬)のルーン"
+modGwiennRuneTyr, "Tyr(神の名)のルーン"
+
+ITEM_________________________XML,ITEM_________________________XML
+RuneFeohDesc, "武器: ルートバッグのドロップ率が上昇する\nツール: 採集量が上昇する\n防具: 略奪品ステージが上昇する\n車両: 燃費が大幅に向上する\n[0067FF] - 富は近親者の不和の根源なり。その森に狼は住んでいる -[-]"
+RuneUrDesc, "[ffa700]- 劣った鉄。トナカイは厳しい吹雪を駆ける -[-]"
+RuneThursDesc, "[ffa700]- 女らを病気にする。悪運に喜びはなし -[-]"
+RuneAnsuzDesc, "[ffa700]- 河口は旅の道である。しかし鞘は剣のものだ -[-]"
+RuneRadDesc, "[ffa700]- 馬にとって最も疎ましきもの。レギンは名剣を鍛えた -[-]"
+RuneTyrDesc, "[ffa700]- 不具の神。狼に喰われた残り。神殿の王 -[-]"
