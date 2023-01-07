@@ -1,12 +1,42 @@
 <configs>
     <append xpath="/buffs">
-        <buff name="buffFeohRanged" hidden="true">
-            <duration value="100"/>
+        <!-- Feohルーンの防具効果。ルートステージ上昇。効果はスタックする。 -->
+        <buff name="buffFeohChestArmor" hidden="true">
+            <duration value="0"/>
             <stack_type value="ignore"/>
             <effect_group>
-                <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
+        <buff name="buffFeohHelmetArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+            </effect_group>
+        </buff>
+        <buff name="buffFeohLegsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+            </effect_group>
+        </buff>
+        <buff name="buffFeohBootsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+            </effect_group>
+        </buff>
+        <buff name="buffFeohGlovesArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+            </effect_group>
+        </buff>
+
         <!-- Radルーンの防具効果。移動速度とジャンプ力上昇。効果はスタックしない。 -->
         <buff name="buffRadChestArmor" hidden="true">
             <duration value="0"/>

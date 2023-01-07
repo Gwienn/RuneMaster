@@ -20,16 +20,41 @@
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffFeohRanged"/>
+				<!-- TODO: ルートバッグ増加に効果を変更 -->
+				<passive_effect name="BarteringBuying" operation="base_add" value=".2"/>
+                <passive_effect name="BarteringSelling" operation="base_add" value=".2"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="tool"/>
 				<passive_effect name="HarvestCount" operation="perc_add" value=".35"/>
 			</effect_group>
+
 			<effect_group tiered="false">
-				<requirement name="ItemHasTags" tags="armor"/>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<requirement name="ItemHasTags" tags="armorChest"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohChestArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohChestArmor"/>
 			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorHelmet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohHelmetArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohHelmetArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorLegs"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohLegsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohLegsArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorHands"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohGlovesArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohGlovesArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorFeet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohBootsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohBootsArmor"/>
+			</effect_group>
+
 			<effect_group tiered="false"> <!-- vehicle -->
 				<passive_effect name="VehicleFuelUsePer" operation="perc_add" value=".25"/>
 			</effect_group>
@@ -144,9 +169,19 @@
 			<effect_group tiered="false">
 				<requirement name="HoldingItemHasTags" tags="revolver"/>
 				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="6" />
 				<passive_effect name="RoundsPerMinute" operation="base_set" value="500" />
-				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="5" />
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="2.5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="GTE" value="7"/>
+				</passive_effect>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="11">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
+				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value=".5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
+				<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value=".5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
 			</effect_group>
 
 			<effect_group tiered="false">
