@@ -37,6 +37,61 @@
             </effect_group>
         </buff>
 
+        <buff name="buffUrRanged" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".35" />  
+            </effect_group>
+        </buff>
+
+        <!-- Urルーンの防具効果。35%の確率で攻撃者をダウンさせる。複数部位に付けた場合はそれぞれ判定 -->
+        <buff name="buffUrChestArmor" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+            <effect_group> 
+				<triggered_effect trigger="onOtherAttackedSelf" target="other" action="Ragdoll">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffUrHelmetArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <triggered_effect trigger="onOtherAttackedSelf" target="other" action="Ragdoll">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffUrLegsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <triggered_effect trigger="onOtherAttackedSelf" target="other" action="Ragdoll">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffUrBootsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <triggered_effect trigger="onOtherAttackedSelf" target="other" action="Ragdoll">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffUrGlovesArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <triggered_effect trigger="onOtherAttackedSelf" target="other" action="Ragdoll">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+
         <!-- Radルーンの防具効果。移動速度とジャンプ力上昇。効果はスタックしない。 -->
         <buff name="buffRadChestArmor" hidden="true">
             <duration value="0"/>

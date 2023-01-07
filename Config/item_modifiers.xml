@@ -66,17 +66,44 @@
 			<property name="DescriptionKey" value="RuneUrDesc"/>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="melee"/>
+				<passive_effect name="TargetArmor" operation="perc_add" value="-.45"/>
+				<display_value name="dTargetArmor" value="-.45"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffUrRanged"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="tool"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".35"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<requirement name="ItemHasTags" tags="armor"/>
+				<requirement name="ItemHasTags" tags="armorChest"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrChestArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrChestArmor"/>
 			</effect_group>
-			<effect_group tiered="false"> <!-- vehicle -->
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorHelmet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrHelmetArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrHelmetArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorLegs"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrLegsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrLegsArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorHands"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrGlovesArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrGlovesArmor"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="ItemHasTags" tags="armorFeet"/>
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrBootsArmor"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrBootsArmor"/>
+			</effect_group>
+
+			<effect_group tiered="false"> <!-- vehicle 未実装 -->
 			</effect_group>
 		</item_modifier>
 
@@ -136,31 +163,26 @@
 			</effect_group>
 				
 			<effect_group tiered="false">
-				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
 				<requirement name="ItemHasTags" tags="armorChest"/>
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadChestArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadChestArmor"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
 				<requirement name="ItemHasTags" tags="armorHelmet"/>
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadHelmetArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadHelmetArmor"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
 				<requirement name="ItemHasTags" tags="armorLegs"/>
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadLegsArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadLegsArmor"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
 				<requirement name="ItemHasTags" tags="armorHands"/>
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadGlovesArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadGlovesArmor"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<!-- 移動速度の上昇が、何故か直接passive_effectで指定できないので、buffで効果を設定した -->
 				<requirement name="ItemHasTags" tags="armorFeet"/>
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadBootsArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadBootsArmor"/>
@@ -185,10 +207,6 @@
 			</effect_group>
 
 			<effect_group tiered="false">
-				<requirement name="!HoldingItemHasTags" tags="weapon"/> <!-- vehicleで指定できないので、消去法で指定 -->
-				<requirement name="!HoldingItemHasTags" tags="armor"/>
-				<requirement name="!HoldingItemHasTags" tags="clothing"/>
-				<requirement name="!HoldingItemHasTags" tags="tool"/>
 				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
 				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
 			</effect_group>
