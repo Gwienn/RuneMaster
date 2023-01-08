@@ -197,6 +197,49 @@
             </effect_group>
         </buff>
 
+
+        <!-- Tyrルーンの防具効果。10%の確率で、敵の攻撃を完全に無効化する。複数部位に付けた場合はそれぞれ判定 -->
+        <buff name="buffThursChestArmor" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+            <effect_group> 
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffThursHelmetArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group> 
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffThursLegsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group> 
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffThursBootsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group> 
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffThursGlovesArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group> 
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+
         <!-- RadTyr リボルバー セット効果 -->
         <buff name="buffRadRevolverSetRadTyr" name_key="buffSetRadTyrName" description_key="buffSetRadTyrDesc" icon="ui_game_symbol_gunslinger" icon_color="240,0,0" remove_on_death="false">
             <stack_type value="ignore"/>
