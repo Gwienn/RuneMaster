@@ -118,14 +118,14 @@
 					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="35"/>
 				</triggered_effect>
 			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursSledgeSetThursTyr">
+					<requirement name="HoldingItemHasTags" tags="sledge"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursSledgeSetThursTyr"/>
+			</effect_group>
 			<!-- <effect_group tiered="false">
-				<requirement name="ItemHasTags" tags="sledge"/>
-				<requirement name="IsSecondaryAttack"/>
-				<triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="500"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5" />
-				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked">
-					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
-				</triggered_effect>	
+
 			</effect_group> -->
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
@@ -281,6 +281,13 @@
 					<requirement name="HoldingItemHasTags" tags="revolver"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrRevolverSetRadTyr"/>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrSledgeSetThursTyr">
+					<requirement name="HoldingItemHasTags" tags="sledge"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrSledgeSetThursTyr"/>
 			</effect_group>
 
 		</item_modifier>

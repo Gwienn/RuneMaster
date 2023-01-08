@@ -223,5 +223,26 @@
             <stack_type value="ignore"/>
             <duration value="0"/>
         </buff>
+
+        <!-- ThursTyr スレッジ セット効果 -->
+        <buff name="buffThursSledgeSetThursTyr" name_key="buffSetThursTyrName" description_key="buffSetThursTyrDesc" icon="ui_game_symbol_candy_skull_crushers" icon_color="240,0,0" remove_on_death="false">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="HasBuff" buff="buffTyrSledgeSetThursTyr"/>
+				<requirement name="IsSecondaryAttack"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".75"/>
+                <passive_effect name="DegradationPerUse" operation="perc_add" value="5" tags="perkSkullCrusher"/>
+				<triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="500"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".buffShockedDurationStart" operation="set" value="5" />
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffShocked">
+					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
+				</triggered_effect>	
+            </effect_group>
+        </buff>
+        <buff name="buffTyrSledgeSetThursTyr" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
     </append>
 </configs>
