@@ -3,6 +3,12 @@ Key,English
 [f21b10]Red[-]
 [fff700]Yellow[-]
 
+
+BUFF_________________________XML,BUFF_________________________XML
+buffSetRadTyrName, "セット効果：ルーン・ガンスリンガー"
+buffSetRadTyrDesc, "セット効果：ルーン・ガンスリンガー(RadTyr)\nリボルバーでADS時、命中精度と引き換えに連射速度上昇"
+
+
 Item_Modifiers_________________________________XML,Item_Modifiers_________________________________XML
 modGwiennRuneFeoh,"Fe(富)のルーン"
 modGwiennRuneUr,"Ur(鉱滓)のルーン"
@@ -10,6 +16,7 @@ modGwiennRuneThurs,"Thurs(巨人)のルーン"
 modGwiennRuneAnsuz,"Oss(河口)のルーン"
 modGwiennRuneRad,"Rad(騎馬)のルーン"
 modGwiennRuneTyr, "Tyr(神の名)のルーン"
+
 
 ITEM_________________________XML,ITEM_________________________XML
 RuneFeohDesc, "武器: トレーダーに突き付けることで、取引を有利に\nツール: 採集量が上昇する\n防具: 略奪品ステージが上昇する\n車両: 燃費が大幅に向上する\n[0067FF] - 富は近親者の不和の根源なり。その森に狼は住んでいる -[-]"

@@ -154,5 +154,33 @@
 				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
+
+        <!-- RadTyr リボルバー セット効果 -->
+        <buff name="buffRadRevolverSetRadTyr" name_key="buffSetRadTyrName" description_key="buffSetRadTyrDesc" icon="ui_game_symbol_gunslinger" icon_color="240,0,0" remove_on_death="false">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="HasBuff" buff="buffTyrRevolverSetRadTyr"/>
+                <requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
+                <passive_effect name="RoundsPerMinute" operation="base_set" value="500" />
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="2.5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="GTE" value="7"/>
+				</passive_effect>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="11">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
+				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value=".5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
+				<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value=".5">
+					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
+				</passive_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffTyrRevolverSetRadTyr" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        
     </append>
 </configs>
