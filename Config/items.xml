@@ -1,0 +1,15 @@
+<configs>
+    <append xpath="/items">
+        <item name="gwienn_blankRune">
+            <property name="HoldType" value="40"/>
+            <property name="DescriptionKey" value="gwienn_blankRuneDesc"/>
+            <property name="CustomIcon" value="resourceRockSmall"/>
+            <property name="Material" value="MresourceRockSmall"/>
+            <property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+            <property name="DropScale" value="6"/>
+            <property name="Stacknumber" value="1"/>
+            <property name="Weight" value="5"/>
+            <property name="Group" value="Resources"/>
+        </item>
+    </append>
+</configs>

@@ -1,0 +1,22 @@
+<configs>
+    <append xpath="/recipes">
+        <recipe name="modGwiennRuneFeoh" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneUr" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneThurs" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneAnsuz" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneRad" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneTyr" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+    </append>
+</configs>
