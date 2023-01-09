@@ -1,0 +1,7 @@
+<config>
+    <append xpath="/gameevents/action_sequence[@name='game_first_spawn']">
+        <action class="AddItems">
+            <property name="added_items" value="gwienn_blankRune,gwienn_blankRune" />
+        </action>
+    </append>
+</config>
