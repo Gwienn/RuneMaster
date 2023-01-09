@@ -1,0 +1,10 @@
+<configs>
+    <append xpath="//lootgroup[@name='groupLootChestBonusItems']">
+        <item name="modGwiennRuneFeoh" count="1" prob="0.01"/>
+        <item name="modGwiennRuneUr" count="1" prob="0.01"/>
+        <item name="modGwiennRuneThurs" count="1" prob="0.01"/>
+        <item name="modGwiennRuneAnsuz" count="1" prob="0.01"/>
+        <item name="modGwiennRuneRad" count="1" prob="0.01"/>
+        <item name="modGwiennRuneTyr" count="1" prob="0.01"/>
+    </append>
+</configs>
