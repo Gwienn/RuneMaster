@@ -199,7 +199,7 @@
 
 
         <!-- Tyrルーンの防具効果。10%の確率で、敵の攻撃を完全に無効化する。複数部位に付けた場合はそれぞれ判定 -->
-        <buff name="buffThursChestArmor" hidden="true">
+        <buff name="buffTyrChestArmor" hidden="true">
             <duration value="0"/>
             <stack_type value="ignore"/>
             <effect_group> 
@@ -207,7 +207,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffThursHelmetArmor" hidden="true">
+        <buff name="buffTyrsHelmetArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -215,7 +215,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffThursLegsArmor" hidden="true">
+        <buff name="buffTyrLegsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -223,7 +223,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffThursBootsArmor" hidden="true">
+        <buff name="buffTyrBootsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -231,7 +231,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffThursGlovesArmor" hidden="true">
+        <buff name="buffTyrGlovesArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
