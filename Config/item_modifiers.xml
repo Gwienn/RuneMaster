@@ -4,7 +4,7 @@
 			<property name="CreativeMode" value="None"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="HoldType" value="40"/>
-			<property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Crafting/rock_smallPrefab.prefab"/>
 			<property name="DropScale" value="6"/>
 			<property name="Group" value="Mods,Tool/Weapon Mods"/>
 			<property name="SellableToTrader" value="false"/>

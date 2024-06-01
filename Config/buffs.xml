@@ -5,35 +5,35 @@
             <duration value="0"/>
             <stack_type value="ignore"/>
             <effect_group>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<passive_effect name="LootStage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
         <buff name="buffFeohHelmetArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<passive_effect name="LootStage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
         <buff name="buffFeohLegsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<passive_effect name="LootStage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
         <buff name="buffFeohBootsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<passive_effect name="LootStage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
         <buff name="buffFeohGlovesArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-				<passive_effect name="LootGamestage" operation="base_add" value="33"/>
+				<passive_effect name="LootStage" operation="base_add" value="33"/>
             </effect_group>
         </buff>
 
