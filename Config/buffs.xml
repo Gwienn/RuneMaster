@@ -288,5 +288,13 @@
             <stack_type value="ignore"/>
             <duration value="0"/>
         </buff>
+
+        <!-- Eihwaz ヘルメット装備 タレット制御数+1効果-->
+        <buff name="buffEihwazHelmetIncreaseTurrets" name_key="buffEihwazHelmetIncreaseTurretsName" description_key="buffEihwazHelmetIncreaseTurretsDesc" icon="ui_game_symbol_assemble" icon_color="240, 240, 0">
+            <effect_group>
+              <passive_effect name="JunkTurretActiveCount" operation="base_add" value="1"/>
+              <passive_effect name="JunkTurretActiveRange" operation="base_add" value="2"/>
+            </effect_group>
+        </buff>
     </append>
 </configs>

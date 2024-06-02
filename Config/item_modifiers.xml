@@ -389,21 +389,40 @@
 			</effect_group>
 		</item_modifier>
 
-		<item_modifier name="modGwiennRuneEihwaz" installable_tags="weapon,tool,armor" blocked_tags="noMods" modifier_tags="gwiennRuneEihwaz" type="attachment">
+		<item_modifier name="modGwiennRuneEihwaz" installable_tags="weapon,tool,head" blocked_tags="noMods" modifier_tags="gwiennRuneEihwaz" type="attachment">
 			<property name="Extends" value="modGeneralRune"/>
 			<property name="CustomIcon" value="RuneEihwaz"/>
 			<property name="DescriptionKey" value="RuneEihwazDesc"/>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="melee"/>
+				<requirement name="!ItemHasTags" tags="tool"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="head"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="arm"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="leg"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="body"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="head"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="arm"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="leg"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="body"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="tool"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="head"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="arm"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="leg"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="body"/>
 			</effect_group>
 			<effect_group tiered="false">
-				<requirement name="ItemHasTags" tags="armor"/>
+				<requirement name="ItemHasTags" tags="head"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffEihwazHelmetIncreaseTurrets"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffEihwazHelmetIncreaseTurrets"/>
 			</effect_group>
 		</item_modifier>
 	</append>
