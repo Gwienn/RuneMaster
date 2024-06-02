@@ -198,8 +198,8 @@
         </buff>
 
 
-        <!-- Tyrルーンの防具効果。10%の確率で、敵の攻撃を完全に無効化する。複数部位に付けた場合はそれぞれ判定 -->
-        <buff name="buffTyrChestArmor" hidden="true">
+        <!-- Ansuzルーンの防具効果。10%の確率で、敵の攻撃を完全に無効化する。複数部位に付けた場合はそれぞれ判定 -->
+        <buff name="buffAnsuzChestArmor" hidden="true">
             <duration value="0"/>
             <stack_type value="ignore"/>
             <effect_group> 
@@ -207,7 +207,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffTyrsHelmetArmor" hidden="true">
+        <buff name="buffAnsuzHelmetArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -215,7 +215,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffTyrLegsArmor" hidden="true">
+        <buff name="buffAnsuzLegsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -223,7 +223,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffTyrBootsArmor" hidden="true">
+        <buff name="buffAnsuzBootsArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 
@@ -231,7 +231,7 @@
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
             </effect_group>
         </buff>
-        <buff name="buffTyrGlovesArmor" hidden="true">
+        <buff name="buffAnsuzGlovesArmor" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group> 

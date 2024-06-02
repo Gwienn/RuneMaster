@@ -6,5 +6,7 @@
         <item name="modGwiennRuneAnsuz" count="1" prob="0.01"/>
         <item name="modGwiennRuneRad" count="1" prob="0.01"/>
         <item name="modGwiennRuneTyr" count="1" prob="0.01"/>
+        <item name="modGwiennRuneEihwaz" count="1" prob="0.01"/>
+        <item name="modGwiennRuneKenaz" count="1" prob="0.01"/>
     </append>
 </configs>

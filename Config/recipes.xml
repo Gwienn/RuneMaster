@@ -18,5 +18,11 @@
         <recipe name="modGwiennRuneTyr" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
             <ingredient name="gwienn_blankRune" count="1"/>
         </recipe>
+        <recipe name="modGwiennRuneKenaz" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
+        <recipe name="modGwiennRuneEihwaz" craft_time="1" craft_exp_gain="10" count="1" always_unlocked="true">
+            <ingredient name="gwienn_blankRune" count="1"/>
+        </recipe>
     </append>
 </configs>
