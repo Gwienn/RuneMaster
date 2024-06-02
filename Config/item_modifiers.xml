@@ -193,6 +193,12 @@
 			</effect_group>
 			<effect_group tiered="false"> <!-- vehicle -->
 			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursAxeThursAnsuzTyr">
+					<requirement name="HoldingItemHasTags" tags="axe"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursAxeThursAnsuzTyr"/>
+			</effect_group>
 		</item_modifier>
 		
 		<item_modifier name="modGwiennRuneAnsuz" installable_tags="weapon,tool,armor" blocked_tags="noMods" modifier_tags="gwiennRuneAnsuz" type="attachment">
@@ -315,6 +321,12 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrSledgeSetThursTyr"/>
 			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffAnsuzAxeThursAnsuzTyr">
+					<requirement name="HoldingItemHasTags" tags="axe"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffAnsuzAxeThursAnsuzTyr"/>
+			</effect_group>
 
 		</item_modifier>
 
@@ -407,6 +419,13 @@
 					<requirement name="HoldingItemHasTags" tags="revolver"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrRevolverSetRadTyr"/>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrAxeThursAnsuzTyr">
+					<requirement name="HoldingItemHasTags" tags="axe"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrAxeThursAnsuzTyr"/>
 			</effect_group>
 		</item_modifier>
 

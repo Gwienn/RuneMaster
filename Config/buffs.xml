@@ -287,6 +287,16 @@
             </effect_group>
         </buff>
 
+        <!-- Eihwaz ヘルメット装備 タレット制御数+1効果-->
+        <buff name="buffEihwazHelmetIncreaseTurrets" name_key="buffEihwazHelmetIncreaseTurretsName" description_key="buffEihwazHelmetIncreaseTurretsDesc" icon="ui_game_symbol_assemble" icon_color="240, 240, 0">
+            <effect_group>
+                <passive_effect name="JunkTurretActiveCount" operation="base_add" value="1"/>
+                <passive_effect name="JunkTurretActiveRange" operation="base_add" value="2"/>
+            </effect_group>
+        </buff>
+
+        <!-- 以下、セット効果 -->
+
         <!-- RadTyr リボルバー セット効果 -->
         <buff name="buffRadRevolverSetRadTyr" name_key="buffSetRadTyrName" description_key="buffSetRadTyrDesc" icon="ui_game_symbol_gunslinger" icon_color="240,0,0" remove_on_death="false" hidden="true">
             <stack_type value="ignore"/>
@@ -336,11 +346,45 @@
             <duration value="0"/>
         </buff>
 
-        <!-- Eihwaz ヘルメット装備 タレット制御数+1効果-->
-        <buff name="buffEihwazHelmetIncreaseTurrets" name_key="buffEihwazHelmetIncreaseTurretsName" description_key="buffEihwazHelmetIncreaseTurretsDesc" icon="ui_game_symbol_assemble" icon_color="240, 240, 0">
+        <!-- ThursAnsuzTyr 斧 セット効果 :Storm-->
+        <buff name="buffThursAxeThursAnsuzTyr" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,0,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
             <effect_group>
-              <passive_effect name="JunkTurretActiveCount" operation="base_add" value="1"/>
-              <passive_effect name="JunkTurretActiveRange" operation="base_add" value="2"/>
+                <requirement name="HasBuff" buff="buffAnsuzAxeThursAnsuzTyr"/>
+                <requirement name="HasBuff" buff="buffTyrAxeThursAnsuzTyr"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="-.35" />  
+                <passive_effect name="TargetArmor" operation="perc_add" value="-.55"/>
+                <triggered_effect trigger="onSelfKilledOther" action="AddBuff" target="self" buff="buffAxeWrath"/>
+                <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Health" operation="add" value="5"/>
+                <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Stamina" operation="add" value="50"/>
+            </effect_group>
+            
+        </buff>
+        <buff name="buffAnsuzAxeThursAnsuzTyr" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,240,0">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <buff name="buffTyrAxeThursAnsuzTyr" hidden="true" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <buff name="buffAxeWrath" hidden="false" icon="ui_game_symbol_trex" icon_color="240, 0, 0" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="15"/>
+            <display_value value="duration"/>
+            <display_value_key value="{0}"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="set" value=".09"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="add" value=".09">
+                    <requirement name="CVarCompare" cvar=".buffAxeWrathBonus" operation="LT" value="1" />
+                </triggered_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.buffAxeWrathBonus"/>
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value="@.buffAxeWrathBonus"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value="@.buffAxeWrathBonus"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value="@.buffAxeWrathBonus"/>
             </effect_group>
         </buff>
     </append>
