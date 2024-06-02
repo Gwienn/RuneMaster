@@ -20,9 +20,7 @@
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
-				<!-- TODO: ルートバッグ増加に効果を変更 -->
-				<passive_effect name="BarteringBuying" operation="base_add" value=".2"/>
-                <passive_effect name="BarteringSelling" operation="base_add" value=".2"/>
+				<passive_effect name="LootDropProb" operation="base_add" value=".05"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="tool"/>
@@ -367,7 +365,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadRevolverSetRadTyr"/>
 			</effect_group>
-			
+
 			<effect_group tiered="false">
 				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
 				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
