@@ -269,7 +269,7 @@
         </buff>
 
         <!-- ThursTyr スレッジ セット効果 -->
-        <buff name="buffThursSledgeSetThursTyr" name_key="buffSetThursTyrName" description_key="buffSetThursTyrDesc" icon="ui_game_symbol_candy_skull_crushers" icon_color="240,0,0" remove_on_death="false">
+        <buff name="buffThursSledgeSetThursTyr" name_key="buffSetThursTyrName" description_key="buffSetThursTyrDesc" icon="ui_game_symbol_candy_skull_crushers" icon_color="240,0,0" remove_on_death="false" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
