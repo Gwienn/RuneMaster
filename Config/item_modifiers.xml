@@ -280,14 +280,6 @@
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrBootsArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrBootsArmor"/>
 			</effect_group>
-			
-
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrRevolverSetRadTyr">
-					<requirement name="HoldingItemHasTags" tags="revolver"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrRevolverSetRadTyr"/>
-			</effect_group>
 
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrSledgeSetThursTyr">
@@ -295,6 +287,7 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrSledgeSetThursTyr"/>
 			</effect_group>
+
 		</item_modifier>
 
 		<item_modifier name="modGwiennRuneRad" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneRad" type="attachment">
@@ -303,13 +296,13 @@
 			<property name="DescriptionKey" value="RuneRadDesc"/>
 			<effect_group tiered="false">
 				<requirement name="HoldingItemHasTags" tags="ranged"/>
-				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".25" />
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".5" />
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".15" />
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".3" />
 			</effect_group>
 
 			<effect_group tiered="false">
 				<requirement name="HoldingItemHasTags" tags="melee"/>
-				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5" />
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".2" />
 			</effect_group>
 				
 			<effect_group tiered="false">
@@ -339,13 +332,12 @@
 			</effect_group>
 
 			<effect_group tiered="false">
-				<requirement name="HoldingItemHasTags" tags="revolver"/>
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadRevolverSetRadTyr"/>
-			</effect_group>
-			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadRevolverSetRadTyr">
+					<requirement name="HoldingItemHasTags" tags="revolver"/>
+				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadRevolverSetRadTyr"/>
 			</effect_group>
-
+			
 			<effect_group tiered="false">
 				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
 				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
@@ -369,6 +361,13 @@
 				<requirement name="ItemHasTags" tags="armor"/>
 			</effect_group>
 			<effect_group tiered="false"> <!-- vehicle -->
+			</effect_group>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrRevolverSetRadTyr">
+					<requirement name="HoldingItemHasTags" tags="revolver"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrRevolverSetRadTyr"/>
 			</effect_group>
 		</item_modifier>
 

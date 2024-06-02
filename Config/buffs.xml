@@ -241,17 +241,18 @@
         </buff>
 
         <!-- RadTyr リボルバー セット効果 -->
-        <buff name="buffRadRevolverSetRadTyr" name_key="buffSetRadTyrName" description_key="buffSetRadTyrDesc" icon="ui_game_symbol_gunslinger" icon_color="240,0,0" remove_on_death="false">
+        <buff name="buffRadRevolverSetRadTyr" name_key="buffSetRadTyrName" description_key="buffSetRadTyrDesc" icon="ui_game_symbol_gunslinger" icon_color="240,0,0" remove_on_death="false" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
+                <requirement name="!HasBuff" buff="buffHoldBreathAiming01"/>
                 <requirement name="HasBuff" buff="buffTyrRevolverSetRadTyr"/>
-                <requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
-                <passive_effect name="RoundsPerMinute" operation="base_set" value="500" />
-				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="2.5">
+                <passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+                <passive_effect name="RoundsPerMinute" operation="base_set" value="240" />
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="0.5">
 					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="GTE" value="7"/>
 				</passive_effect>
-				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="11">
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="7">
 					<requirement name="PerksUnlocked" skill_name="skillEnforcer" operation="LT" value="6"/>
 				</passive_effect>
 				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value=".5">
@@ -262,7 +263,7 @@
 				</passive_effect>
             </effect_group>
         </buff>
-        <buff name="buffTyrRevolverSetRadTyr" hidden="true">
+        <buff name="buffTyrRevolverSetRadTyr" icon="ui_game_symbol_gunslinger" icon_color="240,0,240" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
         </buff>
