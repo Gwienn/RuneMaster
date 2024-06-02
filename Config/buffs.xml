@@ -92,14 +92,13 @@
             </effect_group>
         </buff>
 
-        <!-- Radルーンの防具効果。移動速度とジャンプ力上昇。効果はスタックしない。 -->
+        <!-- Radルーンの防具効果。移動速度上昇。効果はスタックしない。 -->
         <buff name="buffRadChestArmor" hidden="true">
             <duration value="0"/>
             <stack_type value="ignore"/>
             <effect_group>
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
-				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
         <buff name="buffRadHelmetArmor" hidden="true">
@@ -112,7 +111,6 @@
                 <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
-				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
         <buff name="buffRadLegsArmor" hidden="true">
@@ -125,7 +123,6 @@
                 <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
-				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
         <buff name="buffRadBootsArmor" hidden="true">
@@ -138,7 +135,6 @@
                 <requirement name="!HasBuff" buff="buffRadGlovesArmor"/>
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
-				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
         <buff name="buffRadGlovesArmor" hidden="true">
@@ -151,7 +147,6 @@
                 <requirement name="!HasBuff" buff="buffRadBootsArmor"/>
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".20"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".20"/>
-				<passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
 
@@ -237,6 +232,58 @@
             <effect_group> 
                 <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffKenazChestArmor" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+            <effect_group>
+                <passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffKenazHelmetArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffKenazChestArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazBootsArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazGlovesArmor"/>
+                <passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffKenazLegsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffKenazHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazChestArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazBootsArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazGlovesArmor"/>
+                <passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffKenazBootsArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffKenazHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazChestArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazGlovesArmor"/>
+                <passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
+            </effect_group>
+        </buff>
+        <buff name="buffKenazGlovesArmor" hidden="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="!HasBuff" buff="buffKenazHelmetArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazChestArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazLegsArmor"/>
+                <requirement name="!HasBuff" buff="buffKenazBootsArmor"/>
+                <passive_effect name="JumpStrength" operation="perc_add" value=".65"/>
             </effect_group>
         </buff>
 
