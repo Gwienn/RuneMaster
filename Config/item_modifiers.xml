@@ -103,6 +103,13 @@
 
 			<effect_group tiered="false"> <!-- vehicle 未実装 -->
 			</effect_group>
+			<!-- セット効果トリガーバフ -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffUrDoubleBarrelUrThursRad">
+					<requirement name="HoldingItemHasTags" tags="dBarrel"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffUrDoubleBarrelUrThursRad"/>
+			</effect_group>
 		</item_modifier>
 
 		<item_modifier name="modGwiennRuneThurs" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneThurs" type="attachment">
@@ -198,6 +205,12 @@
 					<requirement name="HoldingItemHasTags" tags="sledge"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursSledgeSetThursAnsuz"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursDoubleBarrelUrThursRad">
+					<requirement name="HoldingItemHasTags" tags="dBarrel"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursDoubleBarrelUrThursRad"/>
 			</effect_group>
 		</item_modifier>
 		
@@ -380,6 +393,12 @@
 					<requirement name="HoldingItemHasTags" tags="revolver"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadRevolverSetRadTyr"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadDoubleBarrelUrThursRad">
+					<requirement name="HoldingItemHasTags" tags="dBarrel"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadDoubleBarrelUrThursRad"/>
 			</effect_group>
 		</item_modifier>
 

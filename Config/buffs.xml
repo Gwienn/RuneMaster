@@ -385,5 +385,46 @@
 				<passive_effect name="RunSpeed" operation="perc_add" value="@.buffAxeWrathBonus"/>
             </effect_group>
         </buff>
+
+        <!-- UrThursRad 2連ショットガン セット効果 :Storm-->
+        <buff name="buffUrDoubleBarrelUrThursRad" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,0,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="HasBuff" buff="buffThursDoubleBarrelUrThursRad"/>
+                <requirement name="HasBuff" buff="buffRadDoubleBarrelUrThursRad"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="3.5"/>
+                <triggered_effect trigger="onSelfKilledOther" action="AddBuff" target="self" buff="buffDoubleBarrelStorm"/>
+                <triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="50"/>
+                <passive_effect name="KickDegreesVerticalMin" operation="perc_add" value=".2"/>
+                <passive_effect name="KickDegreesVerticalMax" operation="perc_add" value=".2"/>
+                <passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value=".1"/>
+                <passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value=".1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffThursDoubleBarrelUrThursRad" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,240,0">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <buff name="buffRadDoubleBarrelUrThursRad" hidden="true" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <buff name="buffDoubleBarrelStorm" hidden="false" icon="ui_game_symbol_trex" icon_color="240, 0, 0" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="10"/>
+            <display_value value="duration"/>
+            <display_value_key value="{0}"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffDoubleBarrelStorm" operation="set" value=".08"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffDoubleBarrelStorm" operation="add" value=".08">
+                    <requirement name="CVarCompare" cvar=".buffDoubleBarrelStorm" operation="LT" value=".8" />
+                </triggered_effect>
+                <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="@.buffDoubleBarrelStorm"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value="@.buffDoubleBarrelStorm"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value="@.buffDoubleBarrelStorm"/>
+            </effect_group>
+        </buff>
     </append>
 </configs>
