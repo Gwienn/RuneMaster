@@ -346,7 +346,7 @@
             <duration value="0"/>
         </buff>
 
-        <!-- ThursAnsuzTyr 斧 セット効果 :Storm-->
+        <!-- ThursAnsuzTyr 斧 セット効果 :Wrath-->
         <buff name="buffThursAxeThursAnsuzTyr" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,0,240">
             <stack_type value="ignore"/>
             <duration value="0"/>
@@ -356,11 +356,10 @@
                 <passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
                 <passive_effect name="GeneralDamageResist" operation="base_add" value="-.35" />  
                 <passive_effect name="TargetArmor" operation="perc_add" value="-.55"/>
-                <triggered_effect trigger="onSelfKilledOther" action="AddBuff" target="self" buff="buffAxeWrath"/>
+                <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="self" buff="buffAxeWrath"/>
                 <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Health" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Stamina" operation="add" value="50"/>
             </effect_group>
-            
         </buff>
         <buff name="buffAnsuzAxeThursAnsuzTyr" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,240,0">
             <stack_type value="ignore"/>
@@ -372,13 +371,12 @@
         </buff>
         <buff name="buffAxeWrath" hidden="false" icon="ui_game_symbol_trex" icon_color="240, 0, 0" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="15"/>
+            <duration value="10"/>
             <display_value value="duration"/>
             <display_value_key value="{0}"/>
-
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="set" value=".09"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="add" value=".09">
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="set" value=".05"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffAxeWrathBonus" operation="add" value=".05">
                     <requirement name="CVarCompare" cvar=".buffAxeWrathBonus" operation="LT" value="1" />
                 </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.buffAxeWrathBonus"/>
