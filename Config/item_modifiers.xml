@@ -212,6 +212,12 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursDoubleBarrelUrThursRad"/>
 			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursKnuckleThursEihwaz">
+					<requirement name="HoldingItemHasTags" tags="perkBrawler"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursKnuckleThursEihwaz"/>
+			</effect_group>
 		</item_modifier>
 		
 		<item_modifier name="modGwiennRuneAnsuz" installable_tags="weapon,tool,armor" blocked_tags="noMods" modifier_tags="gwiennRuneAnsuz" type="attachment">
@@ -538,6 +544,12 @@
 				<requirement name="ItemHasTags" tags="head"/>
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffEihwazHelmetIncreaseTurrets"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffEihwazHelmetIncreaseTurrets"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffEihwazKnuckleThursEihwaz">
+					<requirement name="HoldingItemHasTags" tags="perkBrawler"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffEihwazKnuckleThursEihwaz"/>
 			</effect_group>
 		</item_modifier>
 	</append>

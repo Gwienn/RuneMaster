@@ -426,5 +426,119 @@
 				<passive_effect name="RunSpeed" operation="perc_add" value="@.buffDoubleBarrelStorm"/>
             </effect_group>
         </buff>
+
+        <!-- ThursEihwaz ナックル セット効果 :Duel -->
+        <buff name="buffThursKnuckleThursEihwaz" hidden="true" icon="ui_game_symbol_assemble" icon_color="120,240,0">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="HasBuff" buff="buffEihwazKnuckleThursEihwaz"/>
+                <!-- 通常攻撃を命中させると、チャージが1段階上がる。 -->
+                <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="self" buff="buffKnuckleDuel">
+                    <requirement name="IsPrimaryAttack"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfDamagedOther" target="self" action="ModifyStats" stat="Stamina" operation="add" value="5">
+                    <requirement name="IsPrimaryAttack"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfDamagedOther" target="self" action="ModifyStats" stat="Health" operation="add" value="1">
+                    <requirement name="IsPrimaryAttack"/>
+                </triggered_effect>
+                <!-- 通常攻撃、パワーアタックいずれかを素早く連続して繰り出すと、攻撃速度が大幅に上がっていく -->
+                <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="self" buff="buffKnuckleDuel2">
+                    <requirement name="IsSecondaryAttack"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="self" buff="buffKnuckleDuel3">
+                    <requirement name="IsPrimaryAttack"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <buff name="buffEihwazKnuckleThursEihwaz" hidden="true" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <!-- ナックルコンボのバフ。弱・弱・強と続けることで強力な一撃を繰り出せる -->
+        <buff name="buffKnuckleDuel" hidden="false" icon="ui_game_symbol_boxer" icon_color="240, 0, 0" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="3"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffKnuckleDuel" operation="set" value="1"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffKnuckleDuel" operation="add" value="1">
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="LT" value="2" />
+                </triggered_effect>
+                
+                <!-- チャージ1あたり、ベースダメージ+2 -->
+                <passive_effect name="EntityDamage" operation="base_add" value="2">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="1" />
+                </passive_effect>
+                <passive_effect name="EntityDamage" operation="base_add" value="4">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="2" />
+                </passive_effect>
+                <!-- チャージ1あたり、ダメージ増加率+75% -->
+                <passive_effect name="EntityDamage" operation="perc_add" value=".75">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="1" />
+                </passive_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="1.5">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="2" />
+                </passive_effect>
+                <!-- チャージ1あたり、敵キル時スタミナ回復量+50 -->
+                <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Stamina" operation="add" value="50">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="1" />
+                </triggered_effect>
+                <triggered_effect trigger="onSelfKilledOther" target="self" action="ModifyStats" stat="Stamina" operation="add" value="100">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="Equals" value="2" />
+                </triggered_effect>
+                <!-- チャージ2で吹き飛ばし効果付加 -->
+                <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned02">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="GTE" value="2" />
+                </triggered_effect>
+                <triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="300">
+                    <requirement name="IsSecondaryAttack"/>
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel" operation="GTE" value="2" />
+                </triggered_effect>
+                <!-- パワーアタックを繰り出すと、チャージはなくなる -->
+                <triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffKnuckleDuel">
+                    <requirement name="IsSecondaryAttack"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <!-- ナックルラッシュのバフ。強を連続して繰り出すと、攻撃スピードが上がっていく。 -->
+        <buff name="buffKnuckleDuel2" hidden="true" icon="ui_game_symbol_boxer" icon_color="0, 120, 240" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="2"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffKnuckleDuel2" operation="set" value=".15"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffKnuckleDuel2" operation="add" value=".15">
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel2" operation="LT" value=".75" />
+                </triggered_effect>
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value="@.buffKnuckleDuel2"/>
+                <!-- 通常攻撃を繰り出すと、チャージはなくなる -->
+                <triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffKnuckleDuel2">
+                    <requirement name="IsPrimaryAttack"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
+        <!-- ナックルラッシュのバフ2。弱を連続して繰り出すと、攻撃スピードが上がっていく。 -->
+        <buff name="buffKnuckleDuel3" hidden="true" icon="ui_game_symbol_boxer" icon_color="240, 240, 0" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="2"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffKnuckleDuel3" operation="set" value=".35"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffKnuckleDuel3" operation="add" value=".35">
+                    <requirement name="CVarCompare" cvar=".buffKnuckleDuel3" operation="LT" value="1.5" />
+                </triggered_effect>
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value="@.buffKnuckleDuel3"/>
+                <!-- 通常攻撃を繰り出すと、チャージはなくなる -->
+                <triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" buff="buffKnuckleDuel3">
+                    <requirement name="IsSecondaryAttack"/>
+                </triggered_effect>
+            </effect_group>
+        </buff>
     </append>
 </configs>
