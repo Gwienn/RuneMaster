@@ -491,14 +491,14 @@
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="melee"/>
 				<requirement name="!ItemHasTags" tags="tool"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="head"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.4" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="arm"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="leg"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="body"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="head"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.4" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="arm"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="leg"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="body"/>
