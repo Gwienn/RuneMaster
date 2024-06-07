@@ -325,12 +325,12 @@
             <duration value="0"/>
         </buff>
 
-        <!-- ThursTyr スレッジ セット効果 -->
-        <buff name="buffThursSledgeSetThursTyr" name_key="buffSetThursTyrName" description_key="buffSetThursTyrDesc" icon="ui_game_symbol_candy_skull_crushers" icon_color="240,0,0" remove_on_death="false" hidden="true">
+        <!-- ThursAnsuz スレッジ セット効果 -->
+        <buff name="buffThursSledgeSetThursAnsuz" name_key="buffSetThursAnsuzName" description_key="buffSetThursAnsuzDesc" icon="ui_game_symbol_candy_skull_crushers" icon_color="240,0,0" remove_on_death="false" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
             <effect_group>
-                <requirement name="HasBuff" buff="buffTyrSledgeSetThursTyr"/>
+                <requirement name="HasBuff" buff="buffAnsuzSledgeSetThursAnsuz"/>
 				<requirement name="IsSecondaryAttack"/>
                 <passive_effect name="EntityDamage" operation="perc_add" value=".75"/>
                 <passive_effect name="DegradationPerUse" operation="perc_add" value="5" tags="perkSkullCrusher"/>
@@ -341,7 +341,7 @@
 				</triggered_effect>	
             </effect_group>
         </buff>
-        <buff name="buffTyrSledgeSetThursTyr" hidden="true">
+        <buff name="buffAnsuzSledgeSetThursAnsuz" hidden="true">
             <stack_type value="ignore"/>
             <duration value="0"/>
         </buff>

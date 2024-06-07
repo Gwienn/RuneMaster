@@ -116,15 +116,7 @@
 					<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="35"/>
 				</triggered_effect>
 			</effect_group>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursSledgeSetThursTyr">
-					<requirement name="HoldingItemHasTags" tags="sledge"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursSledgeSetThursTyr"/>
-			</effect_group>
-			<!-- <effect_group tiered="false">
 
-			</effect_group> -->
 			<effect_group tiered="false">
 				<requirement name="ItemHasTags" tags="ranged"/>
 				<triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="0">
@@ -193,11 +185,19 @@
 			</effect_group>
 			<effect_group tiered="false"> <!-- vehicle -->
 			</effect_group>
+
+			<!-- セット効果トリガーバフ -->
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursAxeThursAnsuzTyr">
 					<requirement name="HoldingItemHasTags" tags="axe"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursAxeThursAnsuzTyr"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffThursSledgeSetThursAnsuz">
+					<requirement name="HoldingItemHasTags" tags="sledge"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffThursSledgeSetThursAnsuz"/>
 			</effect_group>
 		</item_modifier>
 		
@@ -315,11 +315,12 @@
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrBootsArmor"/>
 			</effect_group>
 
+			<!-- セット効果トリガーバフ -->
 			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrSledgeSetThursTyr">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffAnsuzSledgeSetThursAnsuz">
 					<requirement name="HoldingItemHasTags" tags="sledge"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrSledgeSetThursTyr"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffAnsuzSledgeSetThursAnsuz"/>
 			</effect_group>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffAnsuzAxeThursAnsuzTyr">
@@ -327,7 +328,6 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffAnsuzAxeThursAnsuzTyr"/>
 			</effect_group>
-
 		</item_modifier>
 
 		<item_modifier name="modGwiennRuneRad" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneRad" type="attachment">
@@ -370,17 +370,16 @@
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadBootsArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadBootsArmor"/>
 			</effect_group>
-
+			<effect_group tiered="false">
+				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
+				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
+			</effect_group>
+			<!-- セット効果トリガーバフ -->
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadRevolverSetRadTyr">
 					<requirement name="HoldingItemHasTags" tags="revolver"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadRevolverSetRadTyr"/>
-			</effect_group>
-
-			<effect_group tiered="false">
-				<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.45"/>
-				<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.35"/>
 			</effect_group>
 		</item_modifier>
 
@@ -413,14 +412,13 @@
 			</effect_group>
 			<effect_group tiered="false"> <!-- vehicle -->
 			</effect_group>
-
+			<!-- セット効果トリガーバフ -->
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrRevolverSetRadTyr">
 					<requirement name="HoldingItemHasTags" tags="revolver"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffTyrRevolverSetRadTyr"/>
 			</effect_group>
-
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffTyrAxeThursAnsuzTyr">
 					<requirement name="HoldingItemHasTags" tags="axe"/>

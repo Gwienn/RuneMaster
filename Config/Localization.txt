@@ -7,8 +7,8 @@ Key,English
 BUFF_________________________XML,BUFF_________________________XML
 buffSetRadTyrName, "セット効果：ルーン・ガンスリンガー"
 buffSetRadTyrDesc, "セット効果：ルーン・ガンスリンガー(RadTyr)\nリボルバーでADS時、命中精度と引き換えに連射速度上昇"
-buffSetThursTyrName, "セット効果：トールハンマー"
-buffSetThursTyrDesc, "セット効果：トールハンマー(ThursTyr)\nスレッジハンマーのパワーアタックを大幅に強化。感電と吹き飛ばし効果を付与\nただし耐久を多く消耗する"
+buffSetThursAnsuzName, "セット効果：トールハンマー"
+buffSetThursAnsuzDesc, "セット効果：トールハンマー(ThursAnsuz)\nスレッジハンマーのパワーアタックを大幅に強化。感電と吹き飛ばし効果を付与\nただし耐久を多く消耗する"
 buffEihwazHelmetIncreaseTurretsName, "ルーン効果：タレット制御数+1、タレット稼働距離+2m"
 buffEihwazHelmetIncreaseTurretsDesc, "ルーン効果：Eihwazルーンの力により、あなたの意識は拡張され、より多くのタレットを同時に制御できるようになるだろう。"
 
