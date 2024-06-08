@@ -540,5 +540,51 @@
                 </triggered_effect>
             </effect_group>
         </buff>
+
+        <!-- RadAnsuz 槍 セット効果: Charger -->
+        <buff name="buffRadSpearRadAnsuz" hidden="true" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="HasBuff" buff="buffAnsuzSpearRadAnsuz"/>
+                <triggered_effect trigger="onSelfRun" action="AddBuff" buff="buffSpearCharge"/>
+                <passive_effect name="BlockRange" operation="base_add" value="0.5"/>
+            </effect_group>
+        </buff>
+        <buff name="buffAnsuzSpearRadAnsuz" hidden="true" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <!-- 槍突撃のバフ。ダッシュ中にパワーアタックを繰り出すと、強力な一撃で敵を弾き飛ばす -->
+        <buff name="buffSpearCharge" hidden="false" icon="ui_game_symbol_spear" icon_color="240, 240, 0" icon_blink="true">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <effect_group>
+                <requirement name="IsSecondaryAttack"/>
+                <passive_effect name="TargetArmor" operation="perc_subtract" value="1"/>
+                <passive_effect name="EntityDamage" operation="base_add" value="5"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="2"/>
+                <passive_effect name="DegradationPerUse" operation="perc_add" value="5"/>
+                <passive_effect name="BlockDamage" operation="base_add" value="100" tags="perkJavelinMaster"/>
+                <passive_effect name="DismemberChance" operation="base_add" value=".5" tags="secondary"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="2" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="wood"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="metal"/>
+				<triggered_effect trigger="onSelfDamagedOther" target="other" action="Ragdoll" duration="0.1" force="500"/>
+            </effect_group>
+            <effect_group>
+                <requirement name="IsSecondaryAttack"/>
+                <requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+                    <triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="5"/>
+            </effect_group>
+            <effect_group>
+                <!-- 走るのをやめると、チャージはなくなる -->
+                <triggered_effect trigger="onSelfWalk" action="RemoveBuff" buff="buffSpearCharge"/>
+                <triggered_effect trigger="onSelfCrouch" action="RemoveBuff" buff="buffSpearCharge"/>
+                <triggered_effect trigger="onSelfJump" action="RemoveBuff" buff="buffSpearCharge"/>
+            </effect_group>
+        </buff>
+
     </append>
 </configs>
