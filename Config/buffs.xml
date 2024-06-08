@@ -37,11 +37,11 @@
             </effect_group>
         </buff>
 
-        <buff name="buffUrRanged" hidden="true">
-            <duration value="0"/>
+        <buff name="buffUrAttackDebuff" hidden="true">
+            <duration value="300"/>
             <stack_type value="ignore"/>
             <effect_group>
-				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".35" />  
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".35" />  
             </effect_group>
         </buff>
 
