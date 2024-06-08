@@ -56,6 +56,16 @@
 			<effect_group tiered="false"> <!-- vehicle -->
 				<passive_effect name="VehicleFuelUsePer" operation="perc_add" value=".25"/>
 			</effect_group>
+
+			<!-- セット効果トリガーバフ -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffFeohHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffFeohHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
+			</effect_group>
 		</item_modifier>
 
 		<item_modifier name="modGwiennRuneUr" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneUr" type="attachment">
@@ -525,6 +535,14 @@
 				</triggered_effect>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadSpearRadAnsuz"/>
 			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRadHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRadHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
+			</effect_group>
 		</item_modifier>
 
 		<item_modifier name="modGwiennRuneTyr" installable_tags="weapon,tool,armor,vehicle" blocked_tags="noMods" modifier_tags="gwiennRuneTyr" type="attachment">
@@ -626,6 +644,15 @@
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffKenazBootsArmor"/>
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffKenazBootsArmor"/>
 					<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/><display_value name="dNoiseMultiplier" value="-.08"/>
+			</effect_group>
+			<!-- セット効果　トリガーバフ -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffKenazHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffKenazHelmetFeohRadKenaz">
+					<requirement name="ItemHasTags" tags="armorHead"/>
+				</triggered_effect>
 			</effect_group>
 		</item_modifier>
 

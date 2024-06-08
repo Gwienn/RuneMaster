@@ -586,5 +586,35 @@
             </effect_group>
         </buff>
 
+        <!-- FeohRadKenaz ヘルメット セット効果: Mastermind -->
+        <buff name="buffFeohHelmetFeohRadKenaz" hidden="false" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+            <!-- ロボット制御能力を大幅に強化 -->
+            <effect_group>
+                <requirement name="HasBuff" buff="buffRadHelmetFeohRadKenaz"/>
+                <requirement name="HasBuff" buff="buffKenazHelmetFeohRadKenaz"/>
+                <passive_effect name="JunkTurretActiveCount" operation="base_add" value="4"/>
+                <passive_effect name="JunkTurretActiveRange" operation="base_add" value="30"/>                    
+            </effect_group>
+            <!-- 通常攻撃のペナルティ -->
+            <effect_group>
+                <requirement name="IsPrimaryAttack"/>
+                <passive_effect name="EntityDamage" operation="perc_subtract" value=".8"/>
+            </effect_group>
+            <!-- パワーアタックのペナルティ -->
+            <effect_group>
+                <requirement name="IsSecondaryAttack"/>
+                <passive_effect name="EntityDamage" operation="perc_subtract" value="1.6"/>
+            </effect_group>
+        </buff>
+        <buff name="buffRadHelmetFeohRadKenaz" hidden="false" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
+        <buff name="buffKenazHelmetFeohRadKenaz" hidden="false" icon="ui_game_symbol_assemble" icon_color="0,120,240">
+            <stack_type value="ignore"/>
+            <duration value="0"/>
+        </buff>
     </append>
 </configs>
